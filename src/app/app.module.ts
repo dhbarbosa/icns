@@ -10,8 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroUsuarioComponent } from './components/usuario/cadastro-usuario/cadastro-usuario.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.component';
-import { SidebarComponent } from './components/icns/sidebar/sidebar.component';
-import { NotasComponent } from './components/icns/notas/notas.component';
+import { SidebarComponent } from './components/icns/area-logado/sidebar/sidebar.component';
+import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresas/cadastrar-empresa/cadastrar-empresa.component';
+import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
+import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
+import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { NotasComponent } from './components/icns/notas/notas.component';
     AlertComponent,
     AreaLogadoComponent,
     SidebarComponent,
-    NotasComponent
+    NotasComponent,
+    CadastrarEmpresaComponent,
+    ListarEmpresasComponent,
+    EmpresasComponent,
   ],
   imports: [
     BrowserModule,

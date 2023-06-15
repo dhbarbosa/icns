@@ -1,0 +1,31 @@
+<div class=" ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Nome Fantasia</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empresa of listEmpresa; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{empresa.cnpj}}</td>
+                <td>{{empresa.nomeFantasia}}</td>
+                <td>{{empresa.email}}</td>
+                <td>{{empresa.contato}}</td>
+                <td>
+                    <a>
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a>
+                        <mat-icon>remove_red_eye</mat-icon>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

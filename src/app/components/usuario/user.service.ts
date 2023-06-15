@@ -12,9 +12,9 @@ import { environment } from 'src/environment/environment';
 export class UserService {
 
 
-  private readonly API_CADASTRO = `http://${environment.apiIp}/api/user/cadastro`
+  private readonly API_CADASTRO = `http://${environment.apiIp}:${environment.port}/api/user/cadastro`
 
-  private readonly API_LOGIN = `http://${environment.apiIp}/api/login`
+  private readonly API_LOGIN = `http://${environment.apiIp}:${environment.port}/api/login`
 
   constructor(private http: HttpClient) { }
 

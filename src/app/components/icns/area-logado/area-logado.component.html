@@ -1,4 +1,12 @@
-<div class="d-flex col">
-    <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 bg-dark">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
 </div>

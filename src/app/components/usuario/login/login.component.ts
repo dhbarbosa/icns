@@ -27,11 +27,12 @@ export class LoginComponent {
   login() {
     this.service.login(this.user).subscribe((res) => {
       localStorage.setItem("Bearer", res.token);
-      this.router.navigate(["/home"])
+      this.router.navigate(["/areaLogado"])
 
     },
       (erro: HttpErrorResponse) => {
-        this.alert.text = erro.error.message
+        console.log(erro)
+        this.alert.text = erro.error.message || "Requisição possui campos inválidos"
         this.alert.color = 'warning'
       })
   }

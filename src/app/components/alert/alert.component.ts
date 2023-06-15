@@ -8,7 +8,7 @@ import { Alert } from './alert';
 })
 export class AlertComponent {
   @Input() alert: Alert = {
-    text: 'Success',
-    color: 'success'
+    text: '',
+    color: ''
   }
 }

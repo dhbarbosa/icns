@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/usuario/login/login.component';
 import { CadastroUsuarioComponent } from './components/usuario/cadastro-usuario/cadastro-usuario.component';
 import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.component';
-import { NotasComponent } from './components/icns/notas/notas.component';
+import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresas/cadastrar-empresa/cadastrar-empresa.component';
+import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
+import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
+import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
+
 
 const routes: Routes = [
   {
@@ -17,10 +21,20 @@ const routes: Routes = [
   },
   {
     component: AreaLogadoComponent,
-    path: 'home',
+    path: 'areaLogado',
     children: [
       {
-        path: 'notas', component: NotasComponent
+        path: 'empresas',
+        component: EmpresasComponent,
+        children: [
+          {
+            path: 'cadastrar',
+            component: CadastrarEmpresaComponent
+          },
+          {
+            path: 'listar',
+            component: ListarEmpresasComponent
+          }]
       }
     ]
   }
