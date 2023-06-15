@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { Token } from './token';
+import { environment } from 'src/environment/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private readonly API_CADASTRO = 'http://localhost:8080/api/user/cadastro'
 
-  private readonly API_LOGIN = 'http://localhost:8080/api/login'
+
+  private readonly API_CADASTRO = `http://${environment.apiIp}/api/user/cadastro`
+
+  private readonly API_LOGIN = `http://${environment.apiIp}/api/login`
 
   constructor(private http: HttpClient) { }
 
