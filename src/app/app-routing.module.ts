@@ -4,6 +4,8 @@ import { LoginComponent } from './components/usuario/login/login.component';
 import { CadastroUsuarioComponent } from './components/usuario/cadastro-usuario/cadastro-usuario.component';
 import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.component';
 import { NotasComponent } from './components/icns/notas/notas.component';
+import { CadastrarEmpresaComponent } from './components/icns/area-logado/cadastrar-empresa/cadastrar-empresa.component';
+
 
 const routes: Routes = [
   {
@@ -21,6 +23,9 @@ const routes: Routes = [
     children: [
       {
         path: 'notas', component: NotasComponent
+      },
+      {
+        path: "cadasEmpre", component: CadastrarEmpresaComponent
       }
     ]
   }
