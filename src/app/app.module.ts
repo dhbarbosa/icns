@@ -12,6 +12,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.component';
 import { SidebarComponent } from './components/icns/sidebar/sidebar.component';
 import { NotasComponent } from './components/icns/notas/notas.component';
+import { CadastrarEmpresaComponent } from './components/icns/area-logado/cadastrar-empresa/cadastrar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NotasComponent } from './components/icns/notas/notas.component';
     AlertComponent,
     AreaLogadoComponent,
     SidebarComponent,
-    NotasComponent
+    NotasComponent,
+    CadastrarEmpresaComponent,
   ],
   imports: [
     BrowserModule,
