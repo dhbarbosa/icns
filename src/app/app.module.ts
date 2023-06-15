@@ -15,6 +15,7 @@ import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresa
 import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
 import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
 import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
+import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/editar-empresa/editar-empresa.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EmpresasComponent } from './components/icns/area-logado/empresas/empres
     CadastrarEmpresaComponent,
     ListarEmpresasComponent,
     EmpresasComponent,
+    EditarEmpresaComponent,
   ],
   imports: [
     BrowserModule,

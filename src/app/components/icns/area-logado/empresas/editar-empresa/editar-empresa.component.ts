@@ -1,16 +1,19 @@
 import { Component, Input } from '@angular/core';
-import { EmpresaService } from '../empresa.service';
 import { Empresa } from '../empresa';
-import { HttpErrorResponse } from '@angular/common/http';
 import { Alert } from 'src/app/components/alert/alert';
+import { EmpresaService } from '../empresa.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
+
 
 @Component({
-  selector: 'app-cadastrar-empresa',
-  templateUrl: './cadastrar-empresa.component.html',
-  styleUrls: ['./cadastrar-empresa.component.css']
+  selector: 'app-editar-empresa',
+  templateUrl: './editar-empresa.component.html',
+  styleUrls: ['./editar-empresa.component.css']
 })
 
-export class CadastrarEmpresaComponent {
+export class EditarEmpresaComponent {
+  
   alert: Alert = {
     text: '',
     color: ''
@@ -80,13 +83,13 @@ export class CadastrarEmpresaComponent {
     }
   }
 
+
   constructor(private service: EmpresaService) { }
 
   save() {
     console.log(this.empresa.contato)
-    this.service.save(this.empresa).subscribe((empresa) => {
-      this.alert.text = `Empresa: ${empresa.nomeFantasia} cadastrada com sucesso!`
-      this.alert.color = 'success'
+    this.service.save(this.empresa).subscribe((res) => {
+      console.log(res)
     }, (erro: HttpErrorResponse) => {
       this.alert.text = erro.error.message || erro.message || "Requisição possui campos inválidos"
       this.alert.color = 'warning'

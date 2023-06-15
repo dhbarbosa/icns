@@ -26,7 +26,9 @@ export class EmpresaService {
 
   findAll(): Observable<Empresa[]> {
     return this.http.get<Empresa[]>(this.API_EMPRESA, { headers: this.headers })
-
   }
 
+  findByCNPJ():Observable<Empresa>{
+    return this.http.get<Empresa>(this.API_EMPRESA)
+  }
 }

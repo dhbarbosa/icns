@@ -1,0 +1,52 @@
+<div class="container w-50">
+    <form class="d-flex row  ">
+        <app-alert></app-alert>
+        <h1 class="h3">Cadastrar Parceiro</h1>
+
+        <div class="mb-3">
+            <app-alert [alert]="alert"></app-alert>
+
+            <label for="labelCNPJ" class="form-label">
+                CNPJ
+            </label>
+
+            <input type="text" (input)="cnpj_valor()" class="form-control" [ngClass]="validCnpj()" id="inputCNPJ"
+                name="cnpj" [(ngModel)]="empresa.cnpj">
+        </div>
+
+        <div class="mb-3">
+            <label for="labelEmail" class="form-label">Email</label>
+
+            <input type="email" [ngClass]="validEmail()" class="form-control" id="inputEmail"
+                aria-describedby="emailHelp" name="email" [(ngModel)]="empresa.email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="labelNomeFantasia" class="form-label">
+                Nome Fantasia
+            </label>
+
+            <input type="text" class="form-control" [ngClass]="validNomeFantasia()" id="inputNomeFantasia"
+                name="nomeFantasia" [(ngModel)]="empresa.nomeFantasia">
+        </div>
+
+        <div class="mb-3">
+            <label for="labelContato" class="form-label">
+                Contato
+            </label>
+
+            <input type="text" class="form-control" id="inputContato" [ngClass]="validContato()" name="contato"
+                (input)="contato_valor()" [(ngModel)]="
+          empresa.contato">
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" (click)="save()" class="btn btn-primary py-2">
+                Cadastrar
+            </button>
+
+        </div>
+
+
+    </form>
+</div>
