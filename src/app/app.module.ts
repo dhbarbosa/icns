@@ -12,10 +12,11 @@ import { AlertComponent } from './components/alert/alert.component';
 import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.component';
 import { SidebarComponent } from './components/icns/area-logado/sidebar/sidebar.component';
 import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresas/cadastrar-empresa/cadastrar-empresa.component';
-import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
 import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
 import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
 import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/editar-empresa/editar-empresa.component';
+import { CadastrarProdutoComponent } from './components/icns/area-logado/produtos/cadastrar-produto/cadastrar-produto.component';
+import { ProdutosComponent } from './components/icns/area-logado/produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/e
     AlertComponent,
     AreaLogadoComponent,
     SidebarComponent,
-    NotasComponent,
     CadastrarEmpresaComponent,
     ListarEmpresasComponent,
     EmpresasComponent,
     EditarEmpresaComponent,
+    CadastrarProdutoComponent,
+    ProdutosComponent,
   ],
   imports: [
     BrowserModule,
