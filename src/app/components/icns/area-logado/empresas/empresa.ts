@@ -1,5 +1,5 @@
 export interface Empresa {
-    id?: string
+    idEmpresas?: string
     cnpj: string,
     nomeFantasia: string,
     email: string,

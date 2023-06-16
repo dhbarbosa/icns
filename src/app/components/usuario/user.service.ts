@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable } from 'rxjs';
@@ -11,18 +11,31 @@ import { environment } from 'src/environment/environment';
 })
 export class UserService {
 
+  private readonly TOKEN_USER = localStorage.getItem("Bearer")
 
-  private readonly API_CADASTRO = `http://${environment.apiIp}:${environment.port}/api/user/cadastro`
+  private readonly headers = new HttpHeaders({
+    'Authorization': `Bearer ${this.TOKEN_USER}`
+  });
+
+  private readonly API_USER = `http://${environment.apiIp}:${environment.port}/api/user`
 
   private readonly API_LOGIN = `http://${environment.apiIp}:${environment.port}/api/login`
 
   constructor(private http: HttpClient) { }
 
   create(user: User): Observable<User> {
-    return this.http.post<User>(this.API_CADASTRO, user);
+    const cadatro = `${this.API_USER}/cadastro`
+    return this.http.post<User>(cadatro, user);
   }
 
   login(user: User): Observable<Token> {
     return this.http.post<Token>(this.API_LOGIN, user);
   }
+
+  findUserByToken(): Observable<User> {
+    const infoUser = `${this.API_USER}/infoUser`
+    console.log(this.headers.getAll)
+    return this.http.post<User>(infoUser, null, { headers: this.headers })
+  }
+
 }

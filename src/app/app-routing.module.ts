@@ -6,8 +6,9 @@ import { AreaLogadoComponent } from './components/icns/area-logado/area-logado.c
 import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresas/cadastrar-empresa/cadastrar-empresa.component';
 import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
 import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
-import { CadastrarProdutoComponent } from './components/icns/area-logado/produtos/cadastrar-produto/cadastrar-produto.component';
-import { ProdutosComponent } from './components/icns/area-logado/produtos/produtos.component';
+import { EmpresaComponent } from './components/icns/area-logado/empresas/empresa/empresa.component';
+import { CadastrarNotaComponent } from './components/icns/area-logado/notas/cadastrar-nota/cadastrar-nota.component';
+import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
 
 
 const routes: Routes = [
@@ -35,15 +36,20 @@ const routes: Routes = [
           {
             path: 'listar',
             component: ListarEmpresasComponent
-          }],
+          },
+          {
+            path: 'empresa/:cnpj',
+            component: EmpresaComponent
+          }
+        ],
       },
       {
         path: 'produtos',
-        component: ProdutosComponent,
+        component: NotasComponent,
         children: [
           {
             path: 'cadastrar',
-            component: CadastrarProdutoComponent
+            component: CadastrarNotaComponent
           }]
       }
     ]

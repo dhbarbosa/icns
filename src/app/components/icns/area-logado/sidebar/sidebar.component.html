@@ -1,47 +1,78 @@
-<div class="d-flex flex-column p-2 text-white bg-dark min-vh-100 h-100 ">
-    <a class="
-        d-flex 
-        align-items-center
-        text-white
-        text-decoration-none"><mat-icon>touch_app</mat-icon><b class="ms-2">ICNS</b></a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto align-items-stretch">
+<div ngbDropdown>
 
-        <li class="nav-item">
-            <a class="
-                p-3
-                nav-link 
-                text-white
-                d-flex
-                align-items-center" routerLink="/areaLogado/produtos" routerLinkActive="active">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar shadow min-vh-100 h-100 collapse">
+        <div class=" position-sticky">
+            <div class="navbar navbar-dark bg-dark text-white p-2 ">
 
-                <mat-icon class="me-2"> bar_chart</mat-icon>
-                Produtos
-            </a>
-        </li>
+                <p>
+                    <b>Username:</b> {{user.username}}
+                </p>
+            </div>
+            <div class="navbar navbar-dark bg-dark text-white p-2">
+                <p>
+                    <b>Nome:</b> {{user.name}}
+                </p>
+            </div>
 
-        <li class="nav-item">
-            <a class="
-                p-3
-                nav-link 
-                d-flex
-                text-white
-                align-items-center" routerLink="/areaLogado/empresas" routerLinkActive="active">
 
-                <mat-icon class=" me-2"> attach_money</mat-icon>
-                Parceiros
-            </a>
-        </li>
+            <ul class="nav flex-column p-2 bg-white">
 
-    </ul>
-    <hr>
-    <div>
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/diogohenbarbosa.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>
-                DiogoHenBarbosa
-            </strong>
-        </a>
-    </div>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link d-flex text-black align-items-center dropdown-toggle" role="button"
+                        aria-expanded="false" data-bs-toggle="dropdown" href="#" id="navbarDarkDropdownMenuLink"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown">
+                        <mat-icon class=" me-2"> attach_money</mat-icon>Empresas
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav ps-5">
+                            <li class="nav-item g-3">
+                                <button class="nav-link text-black active" routerLink="/areaLogado/empresas/cadastrar"
+                                    routerLinkActive="active">
+                                    Cadastrar
+                                </button>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link text-black" routerLink="/areaLogado/empresas/listar"
+                                    routerLinkActive="active">
+                                    Listar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item dropdown ">
+                    <a class="nav-link d-flex text-black align-items-center dropdown-toggle" role="button"
+                        aria-expanded="false" data-bs-toggle="dropdown" href="#" id="navbarDarkDropdownMenuLink"
+                        data-bs-toggle="collapse" data-bs-target="#navbarProdutos">
+                        <mat-icon class="me-2"> bar_chart</mat-icon>Produtos </a>
+                    <div class="collapse navbar-collapse" id="navbarProdutos">
+                        <ul class="navbar-nav ps-5">
+                            <li class="nav-item g-3">
+                                <button class="nav-link text-black active" routerLink="/areaLogado/produtos/cadastrar"
+                                    routerLinkActive="active">
+                                    Cadastrar
+                                </button>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link text-black" routerLink="/areaLogado/empresas/listar"
+                                    routerLinkActive="active">
+                                    Listar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+
+
+        </div>
+
+
+
+    </nav>
+
 </div>

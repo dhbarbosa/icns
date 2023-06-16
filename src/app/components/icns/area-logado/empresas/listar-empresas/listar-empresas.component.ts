@@ -22,4 +22,8 @@ export class ListarEmpresasComponent {
       this.listEmpresa = empresas;
     })
   }
+
+  cnpj(cnpj: string): string {
+    return cnpj.replace(/\D/g, '')
+  }
 }

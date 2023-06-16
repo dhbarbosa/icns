@@ -15,8 +15,13 @@ import { CadastrarEmpresaComponent } from './components/icns/area-logado/empresa
 import { ListarEmpresasComponent } from './components/icns/area-logado/empresas/listar-empresas/listar-empresas.component';
 import { EmpresasComponent } from './components/icns/area-logado/empresas/empresas.component';
 import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/editar-empresa/editar-empresa.component';
-import { CadastrarProdutoComponent } from './components/icns/area-logado/produtos/cadastrar-produto/cadastrar-produto.component';
-import { ProdutosComponent } from './components/icns/area-logado/produtos/produtos.component';
+import { HeaderComponent } from './components/icns/area-logado/header/header.component';
+import { EmpresaComponent } from './components/icns/area-logado/empresas/empresa/empresa.component';
+import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
+import { CadastrarNotaComponent } from './components/icns/area-logado/notas/cadastrar-nota/cadastrar-nota.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,8 +35,9 @@ import { ProdutosComponent } from './components/icns/area-logado/produtos/produt
     ListarEmpresasComponent,
     EmpresasComponent,
     EditarEmpresaComponent,
-    CadastrarProdutoComponent,
-    ProdutosComponent,
+    HeaderComponent,
+    EmpresaComponent,
+    NotasComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,7 @@ import { ProdutosComponent } from './components/icns/area-logado/produtos/produt
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

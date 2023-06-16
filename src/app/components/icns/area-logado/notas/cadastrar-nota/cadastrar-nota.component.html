@@ -1,0 +1,35 @@
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <label name="labelCnpj">
+                CNPJ
+            </label>
+            <input type="text" naem="cnpj" class="form form-control">
+            <div>
+
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <form [formGroup]="secondFormGroup">
+            a
+        </form>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+
+    </mat-step>
+
+</mat-stepper>
