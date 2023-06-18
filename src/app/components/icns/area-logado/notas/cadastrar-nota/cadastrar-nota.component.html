@@ -14,7 +14,26 @@
 
     <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
         <form [formGroup]="secondFormGroup">
-            a
+            <label name="labelNomeProduto">
+                Nome do produto 
+            </label>
+            <input type="text" name="nomeProduto" class="form form-control">
+            <label name="labelDataVencimento">
+                Data de vencimento
+            </label>
+            <input type="text" name="dataVencimento" class="form form-control">
+            <label name="labelCodProd">
+                Código do produto
+            </label>
+            <input type="text" name="codProd" class="form form-control">
+            <label name="labelDescricao">
+                Descrição
+            </label>
+            <input type="text" name="descricao" class="form form-control">
+            <label name="labelValorUnitario">
+                Valor por unidade
+            </label>
+            <input type="text" name="valorUnitario" class="form form-control">
         </form>
         <div>
             <button mat-button matStepperPrevious>Back</button>
