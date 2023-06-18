@@ -37,6 +37,7 @@ export class CadastroUsuarioComponent {
           this.alert.color = 'success'
         },
         (erro: HttpErrorResponse) => {
+          console.log(erro)
           this.alert.text = erro.error.message
           this.alert.color = 'warning'
         })

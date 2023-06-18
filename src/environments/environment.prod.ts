@@ -1,5 +1,7 @@
+
 export const environment = {
     production: true,
-    apiIp: '${IP_API}',
-    port: '${PORT}'
-};
+    apiIp: '34.27.45.201',
+    port: '80'
+
+}

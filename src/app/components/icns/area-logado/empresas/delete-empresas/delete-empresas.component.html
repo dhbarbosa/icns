@@ -1,0 +1,12 @@
+<app-alert class="p-3 w-50" [alert]="alert"></app-alert>
+<div class="d-flex justify-content-center align-items-center h-50 ">
+
+
+    <div class="flex-column">
+
+        <p>Comfirma deletar a <strong>Empresa: </strong><strong> {{empresa.nomeFantasia}}</strong></p>
+
+        <button class="btn btn-primary m-2" (click)="voltar()">Voltar</button>
+        <button class="btn btn-warring btn-outline-danger" (click)="excluirPensamento()">Deletar</button>
+    </div>
+</div>

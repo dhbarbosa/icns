@@ -18,7 +18,8 @@ import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/e
 import { HeaderComponent } from './components/icns/area-logado/header/header.component';
 import { EmpresaComponent } from './components/icns/area-logado/empresas/empresa/empresa.component';
 import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
-import { CadastrarNotaComponent } from './components/icns/area-logado/notas/cadastrar-nota/cadastrar-nota.component';
+import { DeleteEmpresasComponent } from './components/icns/area-logado/empresas/delete-empresas/delete-empresas.component';
+import { UpdateEmpresaComponent } from './components/icns/area-logado/empresas/update-empresa/update-empresa.component';
 
 
 
@@ -38,6 +39,9 @@ import { CadastrarNotaComponent } from './components/icns/area-logado/notas/cada
     HeaderComponent,
     EmpresaComponent,
     NotasComponent,
+    DeleteEmpresasComponent,
+    UpdateEmpresaComponent,
+    UpdateEmpresaComponent
   ],
   imports: [
     BrowserModule,

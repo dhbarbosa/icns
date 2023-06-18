@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 import { Empresa } from './empresa';
 
 
@@ -14,6 +14,7 @@ export class EmpresaService {
   constructor(private http: HttpClient, router: Router) { }
 
   private readonly API_EMPRESA = `http://${environment.apiIp}:${environment.port}/api/user/empresas`
+
   private readonly TOKEN_USER = localStorage.getItem("Bearer")
 
   private readonly headers = new HttpHeaders({
@@ -31,5 +32,16 @@ export class EmpresaService {
   findByCNPJ(cnpj: string): Observable<Empresa> {
     const url = `${this.API_EMPRESA}/${cnpj}`
     return this.http.get<Empresa>(url, { headers: this.headers })
+  }
+
+  delete(cnpj: string): Observable<Empresa> {
+    const url = `${this.API_EMPRESA}/${cnpj}`
+    return this.http.delete<Empresa>(url, { headers: this.headers })
+  }
+
+  update(empresa: Empresa, cnpj: string): Observable<Empresa> {
+    const url = `${this.API_EMPRESA}/${cnpj}`
+
+    return this.http.put<Empresa>(url, empresa, { headers: this.headers })
   }
 }

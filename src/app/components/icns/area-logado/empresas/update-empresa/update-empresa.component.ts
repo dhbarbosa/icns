@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { EmpresaService } from '../empresa.service';
 import { Empresa } from '../empresa';
-import { HttpErrorResponse } from '@angular/common/http';
 import { Alert } from 'src/app/components/alert/alert';
+import { EmpresaService } from '../empresa.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastrar-empresa',
-  templateUrl: './cadastrar-empresa.component.html',
-  styleUrls: ['./cadastrar-empresa.component.css']
+  selector: 'app-update-empresa',
+  templateUrl: './update-empresa.component.html',
+  styleUrls: ['./update-empresa.component.css']
 })
-
-export class CadastrarEmpresaComponent {
+export class UpdateEmpresaComponent {
   alert: Alert = {
     text: '',
     color: ''
@@ -21,6 +21,23 @@ export class CadastrarEmpresaComponent {
     cnpj: '',
     email: '',
     contato: ''
+  }
+
+
+  constructor(
+    private service: EmpresaService,
+    private router: Router,
+    private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    const cnpj = this.route.snapshot.paramMap.get('cnpj');
+    console.log(cnpj)
+    if (cnpj) {
+      this.service.findByCNPJ(cnpj).subscribe((empresa) => {
+        this.empresa = empresa;
+      })
+    }
   }
 
   cnpj_valor(): void {
@@ -80,11 +97,11 @@ export class CadastrarEmpresaComponent {
     }
   }
 
-  constructor(private service: EmpresaService) { }
 
   save() {
-    this.service.save(this.empresa).subscribe((empresa) => {
-      this.alert.text = `Empresa: ${empresa.nomeFantasia} cadastrada com sucesso!`
+    const cnpj = this.route.snapshot.paramMap.get('cnpj');
+    this.service.update(this.empresa, cnpj!).subscribe((empresa) => {
+      this.alert.text = `Empresa: ${empresa.nomeFantasia} atualiza com sucesso!`
       this.alert.color = 'success'
     }, (erro: HttpErrorResponse) => {
       console.log(erro)

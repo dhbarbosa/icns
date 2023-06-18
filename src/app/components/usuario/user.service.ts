@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { Token } from './token';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -34,7 +34,6 @@ export class UserService {
 
   findUserByToken(): Observable<User> {
     const infoUser = `${this.API_USER}/infoUser`
-    console.log(this.headers.getAll)
     return this.http.post<User>(infoUser, null, { headers: this.headers })
   }
 

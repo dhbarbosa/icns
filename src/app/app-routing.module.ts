@@ -9,6 +9,9 @@ import { EmpresasComponent } from './components/icns/area-logado/empresas/empres
 import { EmpresaComponent } from './components/icns/area-logado/empresas/empresa/empresa.component';
 import { CadastrarNotaComponent } from './components/icns/area-logado/notas/cadastrar-nota/cadastrar-nota.component';
 import { NotasComponent } from './components/icns/area-logado/notas/notas.component';
+import { DeleteEmpresasComponent } from './components/icns/area-logado/empresas/delete-empresas/delete-empresas.component';
+import { EditarEmpresaComponent } from './components/icns/area-logado/empresas/editar-empresa/editar-empresa.component';
+import { UpdateEmpresaComponent } from './components/icns/area-logado/empresas/update-empresa/update-empresa.component';
 
 
 const routes: Routes = [
@@ -40,6 +43,14 @@ const routes: Routes = [
           {
             path: 'empresa/:cnpj',
             component: EmpresaComponent
+          },
+          {
+            path: 'delete/:cnpj',
+            component: DeleteEmpresasComponent
+          },
+          {
+            path: 'edit/:cnpj',
+            component: UpdateEmpresaComponent
           }
         ],
       },
